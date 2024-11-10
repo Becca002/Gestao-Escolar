@@ -283,7 +283,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <input class="form-control" placeholder="Nome da Instituição" required="" type="text">
+                                    <input id="nome" class="form-control" placeholder="Nome da Instituição" required="" type="text">
                                 </div>
                             </div>
                             <div class="col-md-12">

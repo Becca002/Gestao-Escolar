@@ -26,7 +26,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top"> <!-- fixed-top-->
+    <nav class="navbar navbar-expand-lg"> <!-- fixed-top-->
         <div class="container-fluid">
             <a class="navbar-brand me-auto" href="#">
                 <img class="logo" src="assets/img/LogoNav.jpg" alt="Logo" />
@@ -86,8 +86,7 @@
         }
 
         require_once $pagina . '.php';
-
-        ?>
+    ?>
 
     <footer>
         <div class="container">
