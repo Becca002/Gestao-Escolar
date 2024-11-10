@@ -37,18 +37,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                    <li class="nav-item">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
                             <a class="nav-link mx-lg-2 <?= ($current_page == 'index.php' || $current_page == '') ? 'active' : '' ?> " aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2 <?= ($current_page == 'index.php?pagina=sobrenos') ? 'active' : '' ?>" href="index.php?pagina=sobrenos">Sobre Nós</a>
+                            <a class="nav-link mx-lg-2 <?= ($current_page == 'index.php?pagina=sobrenos') ? 'active' : '' ?>" href="index.php?pagina=sobreNos">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2 <?= ($current_page == 'index.php?pagina=servicos') ? 'active' : '' ?>" href="#">Serviços</a>
+                            <a class="nav-link mx-lg-2 <?= ($current_page == 'index.php?pagina=servicos') ? 'active' : '' ?>" href="index.php?pagina=servicos">Serviços</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2 <?= ($current_page == 'index.php?pagina=propostas') ? 'active' : '' ?>" href="#">Propostas</a>
+                            <a class="nav-link mx-lg-2 <?= ($current_page == 'index.php?pagina=propostas') ? 'active' : '' ?>" href="index.php?pagina=propostas">Propostas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-lg-2 <?= ($current_page == 'index.php?pagina=blog') ? 'active' : '' ?>" href="index.php?pagina=blog">Blog</a>
