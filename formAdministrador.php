@@ -121,7 +121,7 @@ if (isset($_GET['acao']) != 'insert') {
 
     <div class="row">
         <div class="col-10">
-            <h3>Alunos<?= $func->subTitulo(!isset($_GET['acao'])) ?></h3>
+            <h3>Administrador<?= $func->subTitulo(!isset($_GET['acao'])) ?></h3>
         </div>
         <div class="col-2 text-end">
             <a href="index.php?pagina=listaAdministrador" 

@@ -7,10 +7,9 @@ $db = new Database();
 $func = new funcoes();
 
 $dados = [];
-
 $cod_professor = isset($_GET['cod_professor']) ? $_GET['cod_professor'] : null;
 
-if (isset($_GET['acao']) && $_GET['acao'] != 'insert' && $cod_professor !== null) {
+if (isset($_GET['acao']) != 'insert') {
     $dados = $db->dbSelect(
         "SELECT * FROM professor WHERE cod_professor = ?",
         'first',
@@ -26,7 +25,7 @@ if (isset($_GET['acao']) && $_GET['acao'] != 'insert' && $cod_professor !== null
 
     <div class="row">
         <div class="col-10">
-            <h3>Alunos<?= $func->subTitulo($_GET['acao']) ?></h3>
+            <h3>Professor<?= $func->subTitulo(!isset($_GET['acao'])) ?></h3>
         </div>
         <div class="col-2 text-end">
             <a href="index.php?pagina=listaProfessor" 
@@ -36,7 +35,8 @@ if (isset($_GET['acao']) && $_GET['acao'] != 'insert' && $cod_professor !== null
         </div>
     </div>
 
-    <form class="g-3" action="<?= $_GET['acao'] ?>professor.php" method="POST">
+    <!--<form class="g-3" action="<?= $_GET['acao'] ?>professor.php" method="POST"> -->
+        <form class="g-3" action="insertProfessor.php" method="POST">
 
         <input type="hidden" name="id_professor" id="id_professor" value="<?= funcoes::setValue($dados, "cod_professor") ?>">
 
@@ -49,12 +49,12 @@ if (isset($_GET['acao']) && $_GET['acao'] != 'insert' && $cod_professor !== null
 
             <div class="col-4 mt-3">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="telefone" name="telefone" required value="<? funcoes::setValue($dados, 'telefone') ?>">
+                <input type="text" class="form-control" id="telefone" name="telefone" required value="<?= funcoes::setValue($dados, 'telefone') ?>">
             </div>
 
             <div class="col-4 mt-3">
                 <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="cpf" name="cpf" required value="<? funcoes::setValue($dados, 'cpf') ?>">
+                <input type="text" class="form-control" id="cpf" name="cpf" required value="<?= funcoes::setValue($dados, 'cpf') ?>">
             </div>
             
             <div class="col-4 mt-3">
@@ -64,7 +64,7 @@ if (isset($_GET['acao']) && $_GET['acao'] != 'insert' && $cod_professor !== null
             
             <div class="col-6 mt-3">
                 <label for="cidade" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="cidade" name="cidade" required value="<? funcoes::setValue($dados, 'cidade') ?>">
+                <input type="text" class="form-control" id="cidade" name="cidade" required value="<?= funcoes::setValue($dados, 'cidade') ?>">
             </div>
 
             <div class="col-3 mt-3">
@@ -103,17 +103,17 @@ if (isset($_GET['acao']) && $_GET['acao'] != 'insert' && $cod_professor !== null
 
             <div class="col-3 mt-3">
                 <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" name="cep" required value="<? funcoes::setValue($dados, 'cep') ?>">
+                <input type="text" class="form-control" id="cep" name="cep" required value="<?= funcoes::setValue($dados, 'cep') ?>">
             </div>
             
             <div class="col-9 mt-3">
                 <label for="logradouro" class="form-label">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro" name="logradouro" required value="<? funcoes::setValue($dados, 'logradouro') ?>">
+                <input type="text" class="form-control" id="logradouro" name="logradouro" required value="<?= funcoes::setValue($dados, 'logradouro') ?>">
             </div>
 
             <div class="col-3 mt-3">
                 <label for="numero" class="form-label">Número</label>
-                <input type="text" class="form-control" id="numero" name="numero" required value="<? funcoes::setValue($dados, 'numero') ?>">
+                <input type="text" class="form-control" id="numero" name="numero" required value="<?= funcoes::setValue($dados, 'numero') ?>">
             </div>
 
             <div class="col-12 mt-3">
@@ -140,11 +140,12 @@ if (isset($_GET['acao']) && $_GET['acao'] != 'insert' && $cod_professor !== null
                     Voltar
                 </a>
 
-                <?php if ($_GET['acao'] != 'view'): ?>
+                <?php if (isset($_GET['acao']) != 'view'): ?>
                     <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
                 <?php endif; ?>
             </div>
         </div>
-
     </form>
 </div>
+
+        

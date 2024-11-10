@@ -26,7 +26,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg"> <!-- fixed-top-->
+    <nav class="navbar navbar-expand-lg fixed-top"> <!-- fixed-top-->
         <div class="container-fluid">
             <a class="navbar-brand me-auto" href="#">
                 <img class="logo" src="assets/img/LogoNav.jpg" alt="Logo" />
@@ -62,7 +62,7 @@
             <div class="dropstart">
                 <a href="#" class="login-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu dropdown-style">
-                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=formAluno">Portal do Aluno</a></li>
+                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=loginViewAluno">Portal do Aluno</a></li>
                     <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=formProfessor">Portal do Professor</a></li>
                     <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=formAdministrador">Área Administrativa</a></li>
                 </ul>
@@ -103,9 +103,9 @@
                         <h2>Links Rápidos</h2>
                     <ul>
                         <li><a href="#">Início</a></li>
-                        <li><a href="#">Sobre Nós</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="index.php?pagina=sobreNos">Sobre Nós</a></li>
+                        <li><a href="index.php?pagina=blog">Blog</a></li>
+                        <li><a href="index.php?pagina=contato">Contato</a></li>
                     </ul>
                     </ul>
                     </div>                    
