@@ -8,6 +8,7 @@
     require_once "lib/funcoes.php";
 
     $current_page = basename($_SERVER['REQUEST_URI']);
+
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +27,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top"> <!-- fixed-top-->
+    <nav class="navbar navbar-expand-lg"> <!-- fixed-top-->
         <div class="container-fluid">
             <a class="navbar-brand me-auto" href="#">
                 <img class="logo" src="assets/img/LogoNav.jpg" alt="Logo" />
@@ -62,9 +63,9 @@
             <div class="dropstart">
                 <a href="#" class="login-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu dropdown-style">
-                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=loginViewAluno">Portal do Aluno</a></li>
-                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=formProfessor">Portal do Professor</a></li>
-                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=formAdministrador">Área Administrativa</a></li>
+                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=dashboard">Portal do Aluno</a></li>
+                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=listaProfessor">Portal do Professor</a></li>
+                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=formDisciplina">Área Administrativa</a></li>
                 </ul>
             </div>
             <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -114,8 +115,8 @@
                     <div class="single-box">
                         <h2>Recursos</h2>
                     <ul>
-                        <li><a href="#">Portal do Aluno</a></li>
-                        <li><a href="#">Portal do Professor</a></li>
+                        <li><a href="index.php?pagina=loginViewAluno">Portal do Aluno</a></li>
+                        <li><a href="index.php?pagina=loginViewProfessor">Portal do Professor</a></li>
                         <li><a href="#">Suporte</a></li>
                         <li><a href="#">Política de Privacidade</a></li>
                     </ul>

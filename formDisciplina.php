@@ -130,7 +130,7 @@ if (isset($_GET['acao']) != 'insert') {
 
             <div class="col-4 mt-3">
                 <label for="carga_horaria" class="form-label">Carga Horária</label>
-                <input type="text" class="form-control" id="carga_horaria" name="carga_horaria" required value="<? funcoes::setValue($dados, 'carga_horaria') ?>">
+                <input type="text" class="form-control" id="carga_horaria" name="carga_horaria" required value="<?= funcoes::setValue($dados, 'carga_horaria') ?>">
             </div>
 
             <div class="col-8 mt-3">
@@ -139,7 +139,7 @@ if (isset($_GET['acao']) != 'insert') {
                     <option value="" <?= Funcoes::setValue($dados, 'id_curso') == ""  ? 'selected' : '' ?>>...</option>
 
                     <?php foreach ($aCurso as $curso): ?>
-                        <option value="<?= $curso['id_curso'] ?>" <?= Funcoes::setValue($dados, 'id_curso') == $curso['id_curso'] ? 'selected' : '' ?>><?= $curso['curso'] ?></option>
+                        <option value="<?= $curso['cod_curso'] ?>" <?= Funcoes::setValue($dados, 'cod_curso') == $curso['cod_curso'] ? 'selected' : '' ?>><?= $curso['curso'] ?></option>
                     <?php endforeach; ?>
                     
                 </select>

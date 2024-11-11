@@ -23,9 +23,6 @@ $data = $db->dbSelect("SELECT * FROM administrador ORDER BY nivel");
             <h3>Lista de Administradores</h3>
         </div>
     </div>
-    <div class="col-2 text-end">
-        <a href="#" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
-    </div>
 
     <?= funcoes::mensagem() ?>
 
@@ -57,6 +54,9 @@ $data = $db->dbSelect("SELECT * FROM administrador ORDER BY nivel");
                             <a href="index.php?pagina=formAdministrador&acao=view&id=<?= $row['cod_adm'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
                         </td>
                     </tr>
+                    <div class="col-2 text-end">
+                        <a href="#" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
+                    </div>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>

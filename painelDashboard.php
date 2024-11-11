@@ -11,8 +11,6 @@ $countAluno = $db->dbSelect("SELECT * FROM aluno", 'count');
 
 $countMatricula = $db->dbSelect("SELECT * FROM matricula WHERE status_matricula = 1", 'count');
 
-$countPagamento = $db->dbSelect("SELECT * FROM mensalidade WHERE status_pagamento = 2", 'count');
-
 ?>
 
 
@@ -43,19 +41,6 @@ $countPagamento = $db->dbSelect("SELECT * FROM mensalidade WHERE status_pagament
             </a>
         </div>
 
-        <div class="col-md-4">
-            <a href="" class="link-text-decoration">
-                <div class="metricas-box">
-                    <div>
-                        <h3 class="fs-2"><?= $countPagamento ?></h3>
-                        <p class="fs-5">Pagamentos Pendentes</p>
-                    </div>
-                    <i class="bi bi-currency-dollar fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                </div>
-            </a>
-        </div>
-    </div>
-
     <div class="row my-5 area-table" >
         <h3 class="fs-4 mb-3">Alunos Recentes</h3>
         <div class="col">
@@ -74,7 +59,7 @@ $countPagamento = $db->dbSelect("SELECT * FROM mensalidade WHERE status_pagament
                     <?php if (count($data) > 0) : ?>
                         <?php foreach ($data as $row): ?>
                             <tr>
-                                <td><?= $row['id_aluno'] ?></td>
+                                <td><?= $row['cod_aluno'] ?></td>
                                 <td><?= $row['nome_completo'] ?></td>
                                 <td><?php
                                     $telefone = $row['telefone'];
@@ -86,7 +71,7 @@ $countPagamento = $db->dbSelect("SELECT * FROM mensalidade WHERE status_pagament
                                 </td>
                                 <td><?= $row['email'] ?></td>
                                 <td>
-                                    <a href="dashboard.php?pagina=formAluno&acao=view&id_aluno=<?= $row['id_aluno'] ?>" class="btn-lista" title="Visualização">Visualizar</a>
+                                    <a href="dashboard.php?pagina=formAluno&acao=view&id_aluno=<?= $row['cod_aluno'] ?>" class="btn-lista" title="Visualização">Visualizar</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

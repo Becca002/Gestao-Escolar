@@ -35,8 +35,8 @@ if (isset($_GET['acao']) != 'insert') {
         </div>
     </div>
 
-    <!--<form class="g-3" action="<?= $_GET['acao'] ?>professor.php" method="POST"> -->
-        <form class="g-3" action="insertProfessor.php" method="POST">
+    <!--    <form class="g-3" action="<?= $_GET['acao'] ?>listaProfessor.php" method="POST">  -->
+    <form class="g-3" action="insertProfessor.php" method="POST">
 
         <input type="hidden" name="id_professor" id="id_professor" value="<?= funcoes::setValue($dados, "cod_professor") ?>">
 

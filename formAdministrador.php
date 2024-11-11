@@ -116,7 +116,6 @@ if (isset($_GET['acao']) != 'insert') {
 }
 
 ?>
-
 <div class="container mt-5">
 
     <div class="row">
@@ -198,4 +197,5 @@ if (isset($_GET['acao']) != 'insert') {
             </div>
         </div>
     </form>
+</div>
 </div>

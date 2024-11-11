@@ -18,7 +18,7 @@ require_once "lib/funcoes.php";
 
 $db = new Database();
 
-$data = $db->dbSelect("SELECT * FROM aluno ORDER BY nome_completo");
+$data = $db->dbSelect("SELECT * FROM professor ORDER BY nome_completo");
 
 ?>
 
@@ -30,17 +30,19 @@ $data = $db->dbSelect("SELECT * FROM aluno ORDER BY nome_completo");
         </div>
     </div>
     <div class="col-2 text-end">
-        <a href="#" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
+        <a href="#" class="btn btn-outline-primary btn-sm" title="nova">Novo</a>
     </div>
 
     <?= funcoes::mensagem() ?>
 
     <table class="table table-striped table-hover table-bordered table-responsive-sm">
         <thead>
-            <tr>Id</tr>
-            <tr>Nome</tr>
-            <tr>Telefone</tr>
-            <tr>E-mail</tr>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+            </tr>
         </thead>
 
         <tbody>
@@ -48,14 +50,14 @@ $data = $db->dbSelect("SELECT * FROM aluno ORDER BY nome_completo");
             <?php if (count($data) > 0) : ?>
                 <?php foreach ($data as $row): ?>
                     <tr>
-                        <td><?= $row['id_professor'] ?></td>
+                        <td><?= $row['cod_professor'] ?></td>
                         <td><?= $row['nome_completo'] ?></td>
                         <td><?= $row['telefone'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td>
-                            <a href="index.php?pagina=formAluno&acao=update&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Alteração">Alterar</a>
-                            <a href="index.php?pagina=formAluno&acao=delete&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Exclusão">Excluir</a>
-                            <a href="index.php?pagina=formAluno&acao=view&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
+                            <a href="index.php?pagina=formProfessor&acao=update&id=<?= $row['cod_professor'] ?>" class="btn btn-outline-primary btn-sm" title="Alteração">Alterar</a>
+                            <a href="index.php?pagina=formProfessor&acao=delete&id=<?= $row['cod_professor'] ?>" class="btn btn-outline-primary btn-sm" title="Exclusão">Excluir</a>
+                            <a href="index.php?pagina=formProfessor&acao=view&id=<?= $row['cod_professor'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
