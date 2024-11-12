@@ -49,13 +49,13 @@ $data = $db->dbSelect("SELECT * FROM administrador ORDER BY nivel");
                             ($row['nivel'] == 3 ? "Secretário" : "..."))) ?>
                         </td>
                         <td>
-                            <a href="index.php?pagina=formAdministrador&acao=update&id=<?= $row['cod_adm'] ?>" class="btn btn-outline-primary btn-sm" title="Alteração">Alterar</a>
-                            <a href="index.php?pagina=formAdministrador&acao=delete&id=<?= $row['cod_adm'] ?>" class="btn btn-outline-primary btn-sm" title="Exclusão">Excluir</a>
-                            <a href="index.php?pagina=formAdministrador&acao=view&id=<?= $row['cod_adm'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
+                            <a href="index.php?pagina=Administrador&acao=update&id=<?= $row['cod_adm'] ?>" class="btn btn-outline-danger btn-sm" title="Alteração">Alterar</a>
+                            <a href="index.php?pagina=formAdministrador&acao=delete&id=<?= $row['cod_adm'] ?>" class="btn btn-outline-warning btn-sm" title="Exclusão">Excluir</a>
+                            <a href="index.php?pagina=formAdministrador&acao=view&id=<?= $row['cod_adm'] ?>" class="btn btn-outline-info btn-sm" title="Visualização">Visualizar</a>
                         </td>
                     </tr>
                     <div class="col-2 text-end">
-                        <a href="#" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
+                        <a href="index.php?pagina=formAdministrador" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

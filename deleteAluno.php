@@ -12,7 +12,7 @@ if (isset($_POST['nome_completo'])) {
         $result = $db->dbDelete("DELETE FROM aluno
                                 WHERE cod_aluno = ?"
                                 ,[
-                                    $POST['cod_aluno']
+                                    $_POST['cod_aluno']
                                 ]);
         
         if ($result > 0) {  

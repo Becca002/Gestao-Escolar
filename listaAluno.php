@@ -18,7 +18,7 @@ $data = $db->dbSelect("SELECT * FROM aluno ORDER BY nome_completo");
         </div>
     </div>
     <div class="col-2 text-end">
-        <a href="#" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
+        <a href="index.php?pagina=formAluno" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
     </div>
 
     <?= funcoes::mensagem() ?>
@@ -43,9 +43,9 @@ $data = $db->dbSelect("SELECT * FROM aluno ORDER BY nome_completo");
                         <td><?= $row['telefone'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td>
-                            <a href="index.php?pagina=formAluno&acao=update&cod_aluno=<?= $row['cod_aluno'] ?>" class="btn btn-outline-primary btn-sm" title="Alteração">Alterar</a>
-                            <a href="index.php?pagina=formAluno&acao=delete&cod_aluno=<?= $row['cod_aluno'] ?>" class="btn btn-outline-primary btn-sm" title="Exclusão">Excluir</a>
-                            <a href="index.php?pagina=formAluno&acao=view&cod_aluno=<?= $row['cod_aluno'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
+                            <a href="index.php?pagina=formAluno&acao=update&cod_aluno=<?= $row['cod_aluno'] ?>" class="btn btn-outline-danger btn-sm" title="Alteração">Alterar</a>
+                            <a href="index.php?pagina=formAluno&acao=delete&cod_aluno=<?= $row['cod_aluno'] ?>" class="btn btn-outline-warning btn-sm" title="Exclusão">Excluir</a>
+                            <a href="index.php?pagina=formAluno&acao=view&cod_aluno=<?= $row['cod_aluno'] ?>" class="btn btn-outline-info btn-sm" title="Visualização">Visualizar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

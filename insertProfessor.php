@@ -12,7 +12,7 @@ if (isset($_POST['nome_completo'])) {
     try {
         $result = $db->dbInsert("INSERT INTO professor
                                 (nome_completo, cpf, cidade, estado, cep, logradouro, numero, telefone, salario, email, senha)
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                                 ,[
                                     $_POST['nome_completo'],
                                     $_POST['cpf'],
@@ -35,3 +35,5 @@ if (isset($_POST['nome_completo'])) {
         $_SESSION['msgError'] = "ERROR: " . $e->getMessage();
     }
 } 
+
+return header("Location: index.php?pagina=listaProfessor");

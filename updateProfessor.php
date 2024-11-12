@@ -1,6 +1,8 @@
 <?php 
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (isset($_POST['nome_completo'])) {
 
@@ -35,3 +37,5 @@ if (isset($_POST['nome_completo'])) {
         $_SESSION['msgError'] = "ERROR: " . $e->getMessage();
     }
 } 
+
+return header("Location: index.php?pagina=listaProfessor");

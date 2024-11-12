@@ -9,7 +9,7 @@ $func = new funcoes();
 $dados = [];
 $cod_professor = isset($_GET['cod_professor']) ? $_GET['cod_professor'] : null;
 
-if (isset($_GET['acao']) != 'insert') {
+if ($_GET['acao'] != 'insert') {
     $dados = $db->dbSelect(
         "SELECT * FROM professor WHERE cod_professor = ?",
         'first',
@@ -25,7 +25,7 @@ if (isset($_GET['acao']) != 'insert') {
 
     <div class="row">
         <div class="col-10">
-            <h3>Professor<?= $func->subTitulo(!isset($_GET['acao'])) ?></h3>
+            <h3>Professor<?= $func->subTitulo($_GET['acao']) ?></h3>
         </div>
         <div class="col-2 text-end">
             <a href="index.php?pagina=listaProfessor" 
@@ -36,7 +36,7 @@ if (isset($_GET['acao']) != 'insert') {
     </div>
 
     <!--    <form class="g-3" action="<?= $_GET['acao'] ?>listaProfessor.php" method="POST">  -->
-    <form class="g-3" action="insertProfessor.php" method="POST">
+    <form class="g-3" action="<?= $_GET['acao'] ?>Professor.php" method="POST">
 
         <input type="hidden" name="id_professor" id="id_professor" value="<?= funcoes::setValue($dados, "cod_professor") ?>">
 
@@ -125,7 +125,7 @@ if (isset($_GET['acao']) != 'insert') {
                 <label for="senha" class="form-label">Senha</label>
                 <input type="password" class="form-control" id="senha" name="senha" required value="<?= Funcoes::setValue($dados, 'senha') ?>">
             </div>
-
+            
             <div class="col-6 mt-3">
                 <label for="confSenha" class="form-label">Confirma Senha</label>
                 <input type="password" class="form-control" id="confSenha" name="confSenha" required value="<?= Funcoes::setValue($dados, 'senha') ?>">
@@ -140,7 +140,7 @@ if (isset($_GET['acao']) != 'insert') {
                     Voltar
                 </a>
 
-                <?php if (isset($_GET['acao']) != 'view'): ?>
+                <?php if ($_GET['acao'] != 'view'): ?>
                     <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
                 <?php endif; ?>
             </div>

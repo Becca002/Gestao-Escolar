@@ -18,7 +18,7 @@ $data = $db->dbSelect("SELECT * FROM disciplina");
         </div>
     </div>
     <div class="col-2 text-end">
-        <a href="#" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
+        <a href="index.php?pagina=formDisciplina" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
     </div>
 
     <?= funcoes::mensagem() ?>
@@ -35,13 +35,13 @@ $data = $db->dbSelect("SELECT * FROM disciplina");
             <?php if (count($data) > 0) : ?>
                 <?php foreach ($data as $row): ?>
                     <tr>
-                        <td><?= $row['id_disciplina'] ?></td>
+                        <td><?= $row['disciplina_id'] ?></td>
                         <td><?= $row['disciplina'] ?></td>
                         <td><?= $row['carga_horaria'] ?></td>
                         <td>
-                            <a href="index.php?pagina=formDisciplina&acao=update&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Alteração">Alterar</a>
-                            <a href="index.php?pagina=formDisiciplina&acao=delete&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Exclusão">Excluir</a>
-                            <a href="index.php?pagina=formDisciplina&acao=view&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
+                            <a href="index.php?pagina=formDisciplina&acao=update&id=<?= $row['disciplina_id'] ?>" class="btn btn-outline-danger btn-sm" title="Alteração">Alterar</a>
+                            <a href="index.php?pagina=formDisiciplina&acao=delete&id=<?= $row['disciplina_id'] ?>" class="btn btn-outline-warning btn-sm" title="Exclusão">Excluir</a>
+                            <a href="index.php?pagina=formDisciplina&acao=view&id=<?= $row['disciplina_id'] ?>" class="btn btn-outline-info btn-sm" title="Visualização">Visualizar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

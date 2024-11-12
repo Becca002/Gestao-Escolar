@@ -1,13 +1,13 @@
 <?php
 //listaProfessor.php
-
+/*
 require_once "lib/Database.php";
 require_once "lib/funcoes.php";
 
 $db = new Database();
 
 $data = $db->dbSelect("SELECT * FROM professor");
-
+*/
 ?>
 
 <?php
@@ -30,7 +30,7 @@ $data = $db->dbSelect("SELECT * FROM professor ORDER BY nome_completo");
         </div>
     </div>
     <div class="col-2 text-end">
-        <a href="#" class="btn btn-outline-primary btn-sm" title="nova">Novo</a>
+        <a href="index.php?pagina=formProfessor&acao=insert" class="btn btn-outline-primary btn-sm" title="nova">Novo</a>
     </div>
 
     <?= funcoes::mensagem() ?>
@@ -55,9 +55,9 @@ $data = $db->dbSelect("SELECT * FROM professor ORDER BY nome_completo");
                         <td><?= $row['telefone'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td>
-                            <a href="index.php?pagina=formProfessor&acao=update&id=<?= $row['cod_professor'] ?>" class="btn btn-outline-primary btn-sm" title="Alteração">Alterar</a>
-                            <a href="index.php?pagina=formProfessor&acao=delete&id=<?= $row['cod_professor'] ?>" class="btn btn-outline-primary btn-sm" title="Exclusão">Excluir</a>
-                            <a href="index.php?pagina=formProfessor&acao=view&id=<?= $row['cod_professor'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
+                            <a href="index.php?pagina=formProfessor&acao=update&cod_professor=<?= $row['cod_professor'] ?>" class="btn btn-outline-danger btn-sm" title="Alteração">Alterar</a>
+                            <a href="index.php?pagina=formProfessor&acao=delete&cod_professor=<?= $row['cod_professor'] ?>" class="btn btn-outline-warning btn-sm" title="Exclusão">Excluir</a>
+                            <a href="index.php?pagina=formProfessor&acao=view&cod_professor=<?= $row['cod_professor'] ?>" class="btn btn-outline-info btn-sm" title="Visualização">Visualizar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

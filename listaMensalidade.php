@@ -22,7 +22,7 @@ $data = $db->dbSelect("SELECT m.*, a.nome AS nome_aluno, t.nome_turma
         </div>
     </div>
     <div class="col-2 text-end">
-        <a href="#" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
+        <a href="index.php?pagina=formMensalidade" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
     </div>
 
     <?= funcoes::mensagem() ?>
@@ -41,15 +41,15 @@ $data = $db->dbSelect("SELECT m.*, a.nome AS nome_aluno, t.nome_turma
             <?php if (count($data) > 0) : ?>
                 <?php foreach ($data as $row): ?>
                     <tr>
-                        <td><?= $row['id_mensalidade'] ?></td>
+                        <td><?= $row['mensalidade_id'] ?></td>
                         <td><?= $row['nome_aluno'] ?></td>
                         <td><?= $row['nome_turma'] ?></td>
                         <td><?= $row['data_vencimento'] ?></td>
                         <td><?= Funcoes::getStatusPagamento($row['status_pagamento']) ?></td>
                         <td>
-                            <a href="index.php?pagina=formDisciplina&acao=update&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Alteração">Alterar</a>
-                            <a href="index.php?pagina=formDisiciplina&acao=delete&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Exclusão">Excluir</a>
-                            <a href="index.php?pagina=formDisciplina&acao=view&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
+                            <a href="index.php?pagina=formMensalidade&acao=update&id=<?= $row['mensalidade_id'] ?>" class="btn btn-outline-danger btn-sm" title="Alteração">Alterar</a>
+                            <a href="index.php?pagina=formMensalidade&acao=delete&id=<?= $row['mensalidade_id'] ?>" class="btn btn-outline-warning btn-sm" title="Exclusão">Excluir</a>
+                            <a href="index.php?pagina=formMensalidade&acao=view&id=<?= $row['mensalidade_id'] ?>" class="btn btn-outline-info btn-sm" title="Visualização">Visualizar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

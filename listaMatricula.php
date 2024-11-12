@@ -22,7 +22,7 @@ $data = $db->dbSelect("SELECT m.*, a.nome AS nome_aluno, t.nome_turma
         </div>
     </div>
     <div class="col-2 text-end">
-        <a href="#" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
+        <a href="index.php?pagina=formMatricula" class="btn btn-outline-secondary btn-sm" title="nova">Novo</a>
     </div>
 
     <?= funcoes::mensagem() ?>
@@ -40,14 +40,14 @@ $data = $db->dbSelect("SELECT m.*, a.nome AS nome_aluno, t.nome_turma
             <?php if (count($data) > 0) : ?>
                 <?php foreach ($data as $row): ?>
                     <tr>
-                        <td><?= $row['id_matricula'] ?></td>
+                        <td><?= $row['matricula_id'] ?></td>
                         <td><?= $row['nome_aluno'] ?></td>
                         <td><?= $row['nome_turma'] ?></td>
                         <td><?= Funcoes::getStatusMatricula($row['status_matricula']) ?></td>
                         <td>
-                            <a href="index.php?pagina=formDisciplina&acao=update&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Alteração">Alterar</a>
-                            <a href="index.php?pagina=formDisiciplina&acao=delete&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Exclusão">Excluir</a>
-                            <a href="index.php?pagina=formDisciplina&acao=view&id=<?= $row['id'] ?>" class="btn btn-outline-primary btn-sm" title="Visualização">Visualizar</a>
+                            <a href="index.php?pagina=formMatricula&acao=update&id=<?= $row['matricula_id'] ?>" class="btn btn-outline-danger btn-sm" title="Alteração">Alterar</a>
+                            <a href="index.php?pagina=formMatricula&acao=delete&id=<?= $row['matricula_id'] ?>" class="btn btn-outline-warning btn-sm" title="Exclusão">Excluir</a>
+                            <a href="index.php?pagina=formMatricula&acao=view&id=<?= $row['matricula_id'] ?>" class="btn btn-outline-info btn-sm" title="Visualização">Visualizar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

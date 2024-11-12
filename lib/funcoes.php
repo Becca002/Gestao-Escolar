@@ -160,22 +160,6 @@ class Funcoes
         }
     }
 
-    /**
-     * getStatusPagamento
-     * 
-     * @param int $status
-     * @param string
-     */
-    public static function getStatusPagamento($status) : string
-    {
-        if ($status == 1) {
-            return "Pago";
-        } elseif ($status == 2) {
-            return "Pendente";
-        } else {
-            return "...";
-        }
-    }
 }
 
 
