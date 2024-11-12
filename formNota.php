@@ -16,7 +16,7 @@ $dados = [];
 
 $id_nota = isset($_GET['id_nota']) ? $_GET['id_nota'] : null;
 
-if (isset($_GET['acao']) != 'insert') {
+if ($_GET['acao'] != 'insert') {
     $dados = $db->dbSelect(
         "SELECT * FROM notas WHERE id_nota = ?",
         'first',
@@ -32,21 +32,21 @@ if (isset($_GET['acao']) != 'insert') {
 
     <div class="row">
         <div class="col-10">
-            <h3>Notas<?= $func->subTitulo(!isset($_GET['acao'])) ?></h3>
+            <h3>Notas<?= $func->subTitulo($_GET['acao']) ?></h3>
         </div>
         <div class="col-2 text-end">
             <a href="index.php?pagina=listaNota" class="btn btn-outline-secondary btn-sm">Voltar</a>
         </div>
     </div>
 
-    <form class="g-3" action="insertNota.php" method="POST">
+    <form class="g-3" action="<?= $_GET['acao'] ?>Nota.php" method="POST">
 
         <input type="hidden" name="id_nota" id="id_nota" value="<?= funcoes::setValue($dados, "id_nota") ?>">
 
         <div class="row">
 
             <div class="col-8">
-                <label for="id_aluno" class="form-label">Aluno</label>
+                <label for="cod_aluno" class="form-label">Aluno</label>
                 <select class="form-control" id="cod_aluno" name="cod_aluno" required>
                     <option value=""  <?= Funcoes::setValue($dados, 'cod_aluno') == ""  ? 'selected' : '' ?>>...</option>
 
@@ -76,7 +76,7 @@ if (isset($_GET['acao']) != 'insert') {
 
             <div class="col-6 mt-3">
                 <label for="disciplina_id" class="form-label">Disciplina</label>
-                <select class="form-control" id="disciplina_id" name="id_disciplina" required>
+                <select class="form-control" id="disciplina_id" name="disciplina_id" required>
                     <option value=""  <?= Funcoes::setValue($dados, 'disciplina_id') == ""  ? 'selected' : '' ?>>...</option>
 
                     <?php foreach ($aDisciplina as $disc): ?>
@@ -92,7 +92,7 @@ if (isset($_GET['acao']) != 'insert') {
             <div class="col-12">
                 <a href="index.php?pagina=listaNota" class="btn btn-outline-secondary btn-sm">Voltar</a>
 
-                <?php if (isset($_GET['acao']) != 'view'): ?>
+                <?php if ($_GET['acao'] != 'view'): ?>
                     <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
                 <?php endif; ?>
             </div>

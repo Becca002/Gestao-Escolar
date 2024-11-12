@@ -11,13 +11,13 @@ if (isset($_POST['data_matricula'])) {
 
     try {
         $result = $db->dbUpdate("UPDATE matricula
-                                SET data_matricula = ?, status_matricula = ?, id_aluno = ?, id_turma = ?
-                                WHERE id_matricula"
+                                SET status_matricula = ?, cod_aluno = ?, cod_turma = ?
+                                WHERE matricula_id"
                                 ,[
-                                    Funcoes::converterDate($_POST['data_matricula']),
                                     $_POST['status_matricula'],
-                                    $_POST['id_aluno'],
-                                    $_POST['id_turma'],
+                                    $_POST['cod_aluno'],
+                                    $_POST['cod_turma'],
+                                    $_POST['matricula_id']
                                 ]);
         
         if ($result > 0) {  

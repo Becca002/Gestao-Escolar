@@ -10,13 +10,13 @@ if (isset($_POST['curso'])) {
 
     try {
         $result = $db->dbInsert("DELETE FROM curso
-                                WHERE id_curso = ?"
+                                WHERE cod_curso = ?"
                                 ,[
-                                    $_POST['id_curso']
+                                    $_POST['cod_curso']
                                 ]);
         
         if ($result > 0) {  
-            $_SESSION['msgSuccess'] = "Curso excluído.";
+            $_SESSION['msgSuccess'] = "Curso excluído com sucesso.";
         }
 
     } catch (Exception $e) {

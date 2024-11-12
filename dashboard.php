@@ -50,7 +50,7 @@ $current_page = basename($_SERVER['REQUEST_URI']);
                 <a href="dashboard.php?pagina=listaAdministradores" class="list-group-item list-group-item-action bg-transparent fw-bold <?= ($current_page == 'dashboard.php?pagina=listaAdministradores') ? 'active' : '' ?>">
                     <i class="bi bi-person-bounding-box me-2"></i>Administradores
                 </a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+                <a href="index.php?pagina=home" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
                     <i class="bi bi-box-arrow-left me-2"></i>Logout</a>
             </div>
         </div>

@@ -13,7 +13,7 @@
                 <label for="password">Senha</label>
                 <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
             </div>
-            <button type="submit" class="login-button-view">Entrar</button>
+            <button type="submit" class="login-button-view" href="index.php?pagina=dashboard">Entrar</button>
             <a href="#" class="forgot-password">Esqueceu a senha?</a>
         </form>
     </div>

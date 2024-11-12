@@ -13,7 +13,7 @@ $aTurma = $db->dbSelect("SELECT * FROM turma ORDER BY nome_turma");
 $dados = [];
 $matricula_id = isset($_GET['matricula_id']) ? $_GET['matricula_id'] : null;
 
-if (isset($_GET['acao']) != 'insert') {
+if ($_GET['acao'] != 'insert') {
     $dados = $db->dbSelect(
         "SELECT * FROM matricula WHERE matricula_id = ?",
         'first',
@@ -29,16 +29,16 @@ if (isset($_GET['acao']) != 'insert') {
 
     <div class="row">
         <div class="col-10">
-            <h3>Matriculas<?= $func->subTitulo(!isset($_GET['acao'])) ?></h3>
+            <h3>Matriculas<?= $func->subTitulo($_GET['acao']) ?></h3>
         </div>
         <div class="col-2 text-end">
             <a href="index.php?pagina=listaMatricula" class="btn btn-outline-secondary btn-sm">Voltar</a>
         </div>
     </div>
 
-    <form class="g-3" action="insertMatricula.php" method="POST">
+    <form class="g-3" action="<?= $_GET['acao'] ?>Matricula.php" method="POST">
 
-        <input type="hidden" name="matricula_id" id="id_matricula" value="<?= funcoes::setValue($dados, "matricula_id") ?>">
+        <input type="hidden" name="matricula_id" id="matricula_id" value="<?= funcoes::setValue($dados, "matricula_id") ?>">
 
         <div class="row">
         <!--
@@ -91,7 +91,7 @@ if (isset($_GET['acao']) != 'insert') {
             <div class="col-12">
                 <a href="index.php?pagina=listaMatricula" class="btn btn-outline-secondary btn-sm">Voltar</a>
 
-                <?php if (isset($_GET['acao']) != 'view'): ?>
+                <?php if ($_GET['acao'] != 'view'): ?>
                     <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
                 <?php endif; ?>
             </div>

@@ -10,12 +10,12 @@ if (isset($_POST['disciplina'])) {
 
     try {
         $result = $db->dbInsert("INSERT INTO disciplina
-                                (disciplina, carga_horaria, id_curso)
+                                (disciplina, carga_horaria, cod_curso)
                                 VALUES (?, ?, ?)"
                                 ,[
                                     $_POST['disciplina'],
                                     $_POST['carga_horaria'],
-                                    $_POST['id_curso'],
+                                    $_POST['cod_curso'],
                                 ]);
         
         if ($result > 0) {  

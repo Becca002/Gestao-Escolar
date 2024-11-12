@@ -10,14 +10,14 @@ if (isset($_POST['nota'])) {
     $db = new Database();
 
     try {
-        $result = $db->dbInsert("INSERT INTO nota
-                                (nota, id_aluno, id_turma, id_disciplina)
+        $result = $db->dbInsert("INSERT INTO notas
+                                (nota, cod_aluno, cod_turma, disciplina_id)
                                 VALUES (?, ?, ?, ?)"
                                 ,[
                                     Funcoes::strDecimais($_POST['nota']),
-                                    $_POST['id_aluno'],
-                                    $_POST['id_turma'],
-                                    $_POST['id_disciplina'],
+                                    $_POST['cod_aluno'],
+                                    $_POST['cod_turma'],
+                                    $_POST['disciplina_id'],
                                 ]);
         
         if ($result > 0) {  

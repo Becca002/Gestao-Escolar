@@ -10,9 +10,9 @@ if (isset($_POST['data_matricula'])) {
 
     try {
         $result = $db->dbDelete("DELETE FROM matricula
-                                WHERE id_matricula = ?"
+                                WHERE matricula_id = ?"
                                 ,[
-                                    $_POST['id_matricula']
+                                    $_POST['matricula_id']
                                 ]);
         
         if ($result > 0) {  

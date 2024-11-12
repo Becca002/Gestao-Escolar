@@ -24,7 +24,7 @@
                     $_SESSION['msgError'] = "Login ou senha inválida!";
                 } else {
 
-                    $_SESSION['userId']     = $data['id_aluno'];
+                    $_SESSION['userId']     = $data['cod_aluno'];
                     $_SESSION['userEmail']  = $data['email'];
                     $_SESSION['userName']   = $data['nome_completo'];
 

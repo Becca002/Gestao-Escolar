@@ -35,16 +35,15 @@ if ($_GET['acao'] != 'insert') {
         </div>
     </div>
 
-    <!--    <form class="g-3" action="<?= $_GET['acao'] ?>listaProfessor.php" method="POST">  -->
     <form class="g-3" action="<?= $_GET['acao'] ?>Professor.php" method="POST">
 
-        <input type="hidden" name="id_professor" id="id_professor" value="<?= funcoes::setValue($dados, "cod_professor") ?>">
+        <input type="hidden" name="cod_professor" id="cod_professor" value="<?= funcoes::setValue($dados, "cod_professor") ?>">
 
         <div class="row">
 
             <div class="col-12">
                 <label for="nome_completo" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome_completo" name="nome_completo" placeholder="Nome do aluno" required autofocus value="<?= Funcoes::setValue($dados, 'nome_completo') ?>">
+                <input type="text" class="form-control" id="nome_completo" name="nome_completo" placeholder="Nome do Professor" required autofocus value="<?= Funcoes::setValue($dados, 'nome_completo') ?>">
             </div>
 
             <div class="col-4 mt-3">

@@ -30,14 +30,14 @@ if (isset($_GET['acao']) != 'insert') {
 
     <div class="row">
         <div class="col-10">
-            <h3>Mensalidades<?= $func->subTitulo(!isset($_GET['acao'])) ?></h3>
+            <h3>Mensalidades<?= $func->subTitulo($_GET['acao']) ?></h3>
         </div>
         <div class="col-2 text-end">
             <a href="index.php?pagina=listaMensalidade" class="btn btn-outline-secondary btn-sm">Voltar</a>
         </div>
     </div>
 
-    <form class="g-3" action="insertMensalidade.php" method="POST">
+    <form class="g-3" action="<?= $_GET['acao'] ?>Mensalidade.php" method="POST">
 
         <input type="hidden" name="mensalidade_id" id="mensalidade_id" value="<?= funcoes::setValue($dados, "mensalidade_id") ?>">
 
@@ -82,7 +82,7 @@ if (isset($_GET['acao']) != 'insert') {
             <div class="col-12">
                 <a href="index.php?pagina=listaMensalidade" class="btn btn-outline-secondary btn-sm">Voltar</a>
 
-                <?php if (isset($_GET['acao']) != 'view'): ?>
+                <?php if ($_GET['acao'] != 'view'): ?>
                     <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
                 <?php endif; ?>
             </div>

@@ -10,12 +10,13 @@ if (isset($_POST['disciplina'])) {
 
     try {
         $result = $db->dbUpdate("UPDATE disciplina
-                                SET disciplina = ?, carga_horaria = ?, id_curso = ?
-                                WHERE id_disciplina = ?"
+                                SET disciplina = ?, carga_horaria = ?, cod_curso = ?
+                                WHERE disciplina_id = ?"
                                 ,[
                                     $_POST['disciplina'],
                                     $_POST['carga_horaria'],
-                                    $_POST['id_curso'],
+                                    $_POST['cod_curso'],
+                                    $_POST['disciplina_id']
                                 ]);
         
         if ($result > 0) {  

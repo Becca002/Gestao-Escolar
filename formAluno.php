@@ -9,7 +9,7 @@ $func = new Funcoes();
 $dados = [];
 $cod_aluno = isset($_GET['cod_aluno']) ? $_GET['cod_aluno'] : null;
 
-if (isset($_GET['acao']) != 'insert') {
+if ($_GET['acao'] != 'insert') {
     $dados = $db->dbSelect(
         "SELECT * FROM aluno WHERE cod_aluno = ?",
         'first',
@@ -25,7 +25,7 @@ if (isset($_GET['acao']) != 'insert') {
 
     <div class="row">
         <div class="col-10">
-            <h3>Alunos<?= $func->subTitulo(!isset($_GET['acao'])) ?></h3>
+            <h3>Alunos<?= $func->subTitulo($_GET['acao']) ?></h3>
         </div>
         <div class="col-2 text-end">
             <a href="index.php?pagina=listaAluno" 
@@ -35,11 +35,9 @@ if (isset($_GET['acao']) != 'insert') {
         </div>
     </div>
 
-    <!-- <form class="g-3" action="<?= $_GET['acao'] ?>listaAluno.php" method="POST"> -->
-    <!--<form class="g-3" action="<?= $_GET['acao'] ?>Aluno.php" method="POST">-->
-    <form class="g-3" action="insertAluno.php" method="POST">
+    <form class="g-3" action="<?= $_GET['acao'] ?>Aluno.php" method="POST">
 
-        <input type="hidden" name="id_aluno" id="id_aluno" value="<?= funcoes::setValue($dados, "cod_aluno") ?>">
+        <input type="hidden" name="cod_aluno" id="cod_aluno" value="<?= funcoes::setValue($dados, "cod_aluno") ?>">
 
         <div class="row">
 
@@ -141,7 +139,7 @@ if (isset($_GET['acao']) != 'insert') {
                     Voltar
                 </a>
 
-                <?php if (isset($_GET['acao']) != 'view'): ?>
+                <?php if ($_GET['acao'] != 'view'): ?>
                     <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
                 <?php endif; ?>
             </div>

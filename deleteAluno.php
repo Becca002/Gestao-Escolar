@@ -16,7 +16,7 @@ if (isset($_POST['nome_completo'])) {
                                 ]);
         
         if ($result > 0) {  
-            $_SESSION['msgSuccess'] = "Aluno excluído.";
+            $_SESSION['msgSuccess'] = "Aluno excluído com sucesso.";
         }
 
     } catch (Exception $e) {

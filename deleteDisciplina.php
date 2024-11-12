@@ -10,13 +10,13 @@ if (isset($_POST['disciplina'])) {
 
     try {
         $result = $db->dbDelete("DELETE FROM disciplina
-                                WHERE id_disciplina = ?"
+                                WHERE disciplina_id = ?"
                                 ,[
-                                    $_POST['id_disciplina']
+                                    $_POST['disciplina_id']
                                 ]);
         
         if ($result > 0) {  
-            $_SESSION['msgSuccess'] = "Disciplina excluída.";
+            $_SESSION['msgSuccess'] = "Disciplina excluída com sucesso.";
         }
 
     } catch (Exception $e) {

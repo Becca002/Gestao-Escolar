@@ -14,7 +14,7 @@ if (isset($_POST['nome_completo'])) {
     try {
         $result = $db->dbUpdate("UPDATE professor
                                 SET nome_completo = ?, cpf = ?, cidade = ?, estado = ?, cep = ?, logradouro = ?, numero = ?, telefone = ?, salario = ?, email = ?, senha = ?
-                                WHERE id_professor = ?"
+                                WHERE cod_professor = ?"
                                 ,[
                                     $_POST['nome_completo'],
                                     $_POST['cpf'],
@@ -26,7 +26,8 @@ if (isset($_POST['nome_completo'])) {
                                     $_POST['telefone'],
                                     Funcoes::strDecimais($_POST['salario']),
                                     $_POST['email'],
-                                    password_hash(trim($_POST['senha']), PASSWORD_DEFAULT)
+                                    password_hash(trim($_POST['senha']), PASSWORD_DEFAULT),
+                                    $_POST['cod_professor']
                                 ]);
         
         if ($result > 0) {  

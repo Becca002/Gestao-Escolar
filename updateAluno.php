@@ -24,7 +24,8 @@ if (isset($_POST['nome_completo'])) {
                                     $_POST['numero'],
                                     $_POST['telefone'],
                                     $_POST['email'],
-                                    password_hash(trim($_POST['senha']), PASSWORD_DEFAULT)
+                                    password_hash(trim($_POST['senha']), PASSWORD_DEFAULT),
+                                    $_POST['cod_aluno']
                                 ]);
         
         if ($result > 0) {  

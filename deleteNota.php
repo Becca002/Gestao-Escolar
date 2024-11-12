@@ -9,14 +9,14 @@ if (isset($_POST['nota'])) {
     $db = new Database();
 
     try {
-        $result = $db->dbDelete("DELETE FROM nota
+        $result = $db->dbDelete("DELETE FROM notas
                                 WHERE id_nota = ?"
                                 ,[
                                     $_POST['id_nota']
                                 ]);
         
         if ($result > 0) {  
-            $_SESSION['msgSuccess'] = "Nota excluída.";
+            $_SESSION['msgSuccess'] = "Nota excluída com sucesso.";
         }
 
     } catch (Exception $e) {

@@ -29,7 +29,7 @@
 <body>
     <nav class="navbar navbar-expand-lg"> <!-- fixed-top-->
         <div class="container-fluid">
-            <a class="navbar-brand me-auto" href="#">
+            <a class="navbar-brand me-auto" href="index.php?pagina=home">
                 <img class="logo" src="assets/img/LogoNav.jpg" alt="Logo" />
             </a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -64,8 +64,8 @@
                 <a href="#" class="login-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu dropdown-style">
                     <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=dashboard">Portal do Aluno</a></li>
-                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=listaProfessor">Portal do Professor</a></li>
-                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=formDisciplina">Área Administrativa</a></li>
+                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=loginViewProfessor">Portal do Professor</a></li>
+                    <li><a class="dropdown-item dropdown-item-style" href="index.php?pagina=listaProfessor">Área Administrativa</a></li>
                 </ul>
             </div>
             <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">

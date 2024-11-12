@@ -10,13 +10,13 @@ if (isset($_POST['nome_turma'])) {
 
     try {
         $result = $db->dbInsert("INSERT INTO turma
-                                (nome_turma, ano_semestre, id_curso, id_professor)
+                                (nome_turma, ano_semestre, cod_curso, cod_professor)
                                 VALUES (?, ?, ?, ?)"
                                 ,[
                                     $_POST['nome_turma'],
                                     $_POST['ano_semestre'],
-                                    $_POST['id_curso'],
-                                    $_POST['id_professor'],
+                                    $_POST['cod_curso'],
+                                    $_POST['cod_professor'],
                                 ]);
         
         if ($result > 0) {  

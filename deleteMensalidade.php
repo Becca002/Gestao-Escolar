@@ -10,13 +10,13 @@ if (isset($_POST['valor'])) {
 
     try {
         $result = $db->dbDelete("DELETE FROM mensalidade
-                                WHERE id_mensalidade = ?"
+                                WHERE mensalidade_id = ?"
                                 ,[
-                                    $_POST['id_mensalidade']
+                                    $_POST['mensalidade_id']
                                 ]);
         
         if ($result > 0) {  
-            $_SESSION['msgSuccess'] = "Mensalidade excluída.";
+            $_SESSION['msgSuccess'] = "Mensalidade excluída com sucesso.";
         }
 
     } catch (Exception $e) {

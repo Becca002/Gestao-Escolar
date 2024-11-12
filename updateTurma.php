@@ -10,13 +10,14 @@ if (isset($_POST['nome_turma'])) {
 
     try {
         $result = $db->dbUpdate("UPDATE turma
-                                SET nome_turma = ?, ano_semestre = ?, id_curso = ?, id_professor = ?
-                                WHERE id_turma = ?"
+                                SET nome_turma = ?, ano_semestre = ?, cod_curso = ?, cod_professor = ?
+                                WHERE cod_turma = ?"
                                 ,[
                                     $_POST['nome_turma'],
                                     $_POST['ano_semestre'],
-                                    $_POST['id_curso'],
-                                    $_POST['id_professor'],
+                                    $_POST['cod_curso'],
+                                    $_POST['cod_professor'],
+                                    $_POST['cod_turma']
                                 ]);
         
         if ($result > 0) {  

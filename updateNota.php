@@ -10,14 +10,15 @@ if (isset($_POST['nota'])) {
     $db = new Database();
 
     try {
-        $result = $db->dbUpdate("UPDATE nota
-                                SET nota = ?, id_aluno = ?, id_turma = ?, id_disciplina = ?
+        $result = $db->dbUpdate("UPDATE notas
+                                SET nota = ?, cod_aluno = ?, cod_turma = ?, disciplina_id = ?
                                 WHERE id_nota = ?"
                                 ,[
                                     Funcoes::strDecimais($_POST['nota']),
-                                    $_POST['id_aluno'],
-                                    $_POST['id_turma'],
-                                    $_POST['id_disciplina'],
+                                    $_POST['cod_aluno'],
+                                    $_POST['cod_turma'],
+                                    $_POST['disciplina_id'],
+                                    $_POST['id_nota']
                                 ]);
         
         if ($result > 0) {  

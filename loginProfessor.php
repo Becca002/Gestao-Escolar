@@ -25,11 +25,11 @@
                     $_SESSION['msgError'] = "Login ou senha inválida!";
                 } else {
 
-                    $_SESSION['userId']     = $data['id_professor'];
+                    $_SESSION['userId']     = $data['cod_professor'];
                     $_SESSION['userEmail']  = $data['email'];
                     $_SESSION['userName']   = $data['nome_completo'];
 
-                    return header("Location: index.php");
+                    return header("Location: index.php?pagina=dashboard");
                 }
             }
         }    

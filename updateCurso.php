@@ -12,12 +12,13 @@ if (isset($_POST['curso'])) {
     try {
         $result = $db->dbUpdate("UPDATE curso
                                 SET curso = ?, descricao = ?, duracao_curso = ?, valor_curso = ?
-                                WHERE id_curso = ?"
+                                WHERE cod_curso = ?"
                                 ,[
                                     $_POST['curso'],
                                     $_POST['descricao'],
                                     $_POST['duracao_curso'],
                                     Funcoes::strDecimais($_POST['valor_curso']),
+                                    $_POST['cod_curso']
                                 ]);
         
         if ($result > 0) {  

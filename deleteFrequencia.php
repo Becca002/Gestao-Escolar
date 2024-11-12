@@ -16,7 +16,7 @@ if (isset($_POST['data_presenca'])) {
                                 ]);
         
         if ($result > 0) {  
-            $_SESSION['msgSuccess'] = "Frequencia excluída.";
+            $_SESSION['msgSuccess'] = "Frequencia excluída com sucesso.";
         }
 
     } catch (Exception $e) {
